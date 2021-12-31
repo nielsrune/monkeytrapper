@@ -1,0 +1,14 @@
+[Unit]
+Conflicts=gnome-shell-x11.service
+
+[Service]
+WorkingDirectory=/opt/monkeytrapper
+ExecStart=/usr/bin/python3 /opt/monkeytrapper/monkeytrapper.py
+Restart=always
+RestartSec=7
+PrivateTmp=true
+#NoNewPrivileges=true
+
+[Install]
+#WantedBy=gnome-shell-wayland.service
+WantedBy=multi-user.target
